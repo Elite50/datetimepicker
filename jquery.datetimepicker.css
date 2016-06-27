@@ -1,3 +1,5 @@
+/* Crowdskout Styles */
+
 .xdsoft_datetimepicker {
 	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
 	background: #fff;
@@ -16,6 +18,7 @@
 	box-sizing: border-box;
 	display: none;
 }
+
 .xdsoft_datetimepicker.xdsoft_rtl {
 	padding: 8px 0 8px 8px;
 }
@@ -534,35 +537,11 @@
 	position: relative;
 	padding: 4px 17px 4px 33px;
 	border: 1px solid #d7d8da;
-	background: -moz-linear-gradient(top, #fff 0%, #f4f8fa 73%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(73%, #f4f8fa));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #fff 0%, #f4f8fa 73%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #fff 0%, #f4f8fa 73%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #fff 0%, #f4f8fa 73%);
-	/* IE10+ */
 	background: linear-gradient(to bottom, #fff 0%, #f4f8fa 73%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f4f8fa',GradientType=0 );
-/* IE6-9 */
 }
 .xdsoft_datetimepicker .blue-gradient-button:hover, .xdsoft_datetimepicker .blue-gradient-button:focus, .xdsoft_datetimepicker .blue-gradient-button:hover span, .xdsoft_datetimepicker .blue-gradient-button:focus span {
   color: #454551;
-  background: -moz-linear-gradient(top, #f4f8fa 0%, #FFF 73%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f8fa), color-stop(73%, #FFF));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #f4f8fa 0%, #FFF 73%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #f4f8fa 0%, #FFF 73%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #f4f8fa 0%, #FFF 73%);
-  /* IE10+ */
   background: linear-gradient(to bottom, #f4f8fa 0%, #FFF 73%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fa', endColorstr='#FFF',GradientType=0 );
-  /* IE6-9 */
 }
