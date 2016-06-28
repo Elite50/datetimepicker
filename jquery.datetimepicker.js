@@ -1498,48 +1498,48 @@
 					});
 				});
 
-			timepicker
-				.find('.xdsoft_prev,.xdsoft_next')
-				.on('touchend mousedown.xdsoft', function () {
-					var $this = $(this),
-						timer = 0,
-						stop = false,
-						period = 110;
-					(function arguments_callee4(v) {
-						var pheight = timeboxparent[0].clientHeight,
-							height = timebox[0].offsetHeight,
-							top = Math.abs(parseInt(timebox.css('marginTop'), 10));
-						if ($this.hasClass(options.next) && (height - pheight) - options.timeHeightInTimePicker >= top) {
-							timebox.css('marginTop', '-' + (top + options.timeHeightInTimePicker) + 'px');
-						} else if ($this.hasClass(options.prev) && top - options.timeHeightInTimePicker >= 0) {
-							timebox.css('marginTop', '-' + (top - options.timeHeightInTimePicker) + 'px');
-						}
-                        /**
-                         * Fixed bug:
-                         * When using css3 transition, it will cause a bug that you cannot scroll the timepicker list.
-                         * The reason is that the transition-duration time, if you set it to 0, all things fine, otherwise, this
-                         * would cause a bug when you use jquery.css method.
-                         * Let's say: * { transition: all .5s ease; }
-                         * jquery timebox.css('marginTop') will return the original value which is before you clicking the next/prev button,
-                         * meanwhile the timebox[0].style.marginTop will return the right value which is after you clicking the
-                         * next/prev button.
-                         *
-                         * What we should do:
-                         * Replace timebox.css('marginTop') with timebox[0].style.marginTop.
-                         */
-                        timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
-						period = (period > 10) ? 10 : period - 10;
-						if (!stop) {
-							timer = setTimeout(arguments_callee4, v || period);
-						}
-					}(500));
-					$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft', function arguments_callee5() {
-						clearTimeout(timer);
-						stop = true;
-						$([options.ownerDocument.body, options.contentWindow])
-							.off('touchend mouseup.xdsoft', arguments_callee5);
-					});
-				});
+			// timepicker
+			// 	.find('.xdsoft_prev,.xdsoft_next')
+			// 	.on('touchend mousedown.xdsoft', function () {
+			// 		var $this = $(this),
+			// 			timer = 0,
+			// 			stop = false,
+			// 			period = 110;
+			// 		(function arguments_callee4(v) {
+			// 			var pheight = timeboxparent[0].clientHeight,
+			// 				height = timebox[0].offsetHeight,
+			// 				top = Math.abs(parseInt(timebox.css('marginTop'), 10));
+			// 			if ($this.hasClass(options.next) && (height - pheight) - options.timeHeightInTimePicker >= top) {
+			// 				timebox.css('marginTop', '-' + (top + options.timeHeightInTimePicker) + 'px');
+			// 			} else if ($this.hasClass(options.prev) && top - options.timeHeightInTimePicker >= 0) {
+			// 				timebox.css('marginTop', '-' + (top - options.timeHeightInTimePicker) + 'px');
+			// 			}
+      //                   /**
+      //                    * Fixed bug:
+      //                    * When using css3 transition, it will cause a bug that you cannot scroll the timepicker list.
+      //                    * The reason is that the transition-duration time, if you set it to 0, all things fine, otherwise, this
+      //                    * would cause a bug when you use jquery.css method.
+      //                    * Let's say: * { transition: all .5s ease; }
+      //                    * jquery timebox.css('marginTop') will return the original value which is before you clicking the next/prev button,
+      //                    * meanwhile the timebox[0].style.marginTop will return the right value which is after you clicking the
+      //                    * next/prev button.
+      //                    *
+      //                    * What we should do:
+      //                    * Replace timebox.css('marginTop') with timebox[0].style.marginTop.
+      //                    */
+      //                   timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
+			// 			period = (period > 10) ? 10 : period - 10;
+			// 			if (!stop) {
+			// 				timer = setTimeout(arguments_callee4, v || period);
+			// 			}
+			// 		}(500));
+			// 		$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft', function arguments_callee5() {
+			// 			clearTimeout(timer);
+			// 			stop = true;
+			// 			$([options.ownerDocument.body, options.contentWindow])
+			// 				.off('touchend mouseup.xdsoft', arguments_callee5);
+			// 		});
+			// 	});
 
 			xchangeTimer = 0;
 			// base handler - generating a calendar and timepicker
