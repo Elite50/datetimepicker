@@ -46,7 +46,7 @@ var DateFormatter;
     defaultSettings = {
         dateSettings: {
             days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            daysShort: ['Su', 'M', 'T', 'W', 'H', 'F', 'S'],
             months: [
                 'January', 'February', 'March', 'April', 'May', 'June', 'July',
                 'August', 'September', 'October', 'November', 'December'
@@ -574,7 +574,8 @@ var DateFormatter;
             return '';
         }
     };
-})();/**
+})();
+/**
  * @preserve jQuery DateTimePicker plugin v2.5.4
  * @homepage http://xdsoft.net/jqplugins/datetimepicker/
  * @author Chupurnov Valeriy (<chupurnov@gmail.com>)
