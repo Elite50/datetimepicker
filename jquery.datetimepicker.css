@@ -410,10 +410,6 @@
 .xdsoft_datetimepicker .xdsoft_copyright a { color: #eee !important }
 .xdsoft_datetimepicker .xdsoft_copyright a:hover { color: #aaa !important }
 
-.xdsoft_time_box {
-	position: relative;
-	border: 1px solid #ccc;
-}
 .xdsoft_scrollbar >.xdsoft_scroller {
 	background: #ccc !important;
 	height: 20px;
@@ -433,6 +429,10 @@
 }
 .xdsoft_scroller_box {
 	position: relative;
+}
+
+.xdsoft_time_box {
+  display: none;
 }
 
 /*
