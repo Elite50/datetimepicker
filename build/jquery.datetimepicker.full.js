@@ -2417,36 +2417,36 @@ var DateFormatter;
 					}, 200);
 				});
 
-			timebox
-				.on('touchend click.xdsoft', 'div', function (xdevent) {
-					xdevent.stopPropagation();
-					var $this = $(this),
-						currentTime = _xdsoft_datetime.currentTime;
-
-					if (currentTime === undefined || currentTime === null) {
-						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
-						currentTime = _xdsoft_datetime.currentTime;
-					}
-
-					if ($this.hasClass('xdsoft_disabled')) {
-						return false;
-					}
-					currentTime.setHours($this.data('hour'));
-					currentTime.setMinutes($this.data('minute'));
-					datetimepicker.trigger('select.xdsoft', [currentTime]);
-
-					datetimepicker.data('input').val(_xdsoft_datetime.str());
-
-					if (options.onSelectTime && $.isFunction(options.onSelectTime)) {
-						options.onSelectTime.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
-					}
-					datetimepicker.data('changed', true);
-					datetimepicker.trigger('xchange.xdsoft');
-					datetimepicker.trigger('changedatetime.xdsoft');
-					if (options.inline !== true && options.closeOnTimeSelect === true) {
-						datetimepicker.trigger('close.xdsoft');
-					}
-				});
+			// timebox
+			// 	.on('touchend click.xdsoft', 'div', function (xdevent) {
+			// 		xdevent.stopPropagation();
+			// 		var $this = $(this),
+			// 			currentTime = _xdsoft_datetime.currentTime;
+      //
+			// 		if (currentTime === undefined || currentTime === null) {
+			// 			_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
+			// 			currentTime = _xdsoft_datetime.currentTime;
+			// 		}
+      //
+			// 		if ($this.hasClass('xdsoft_disabled')) {
+			// 			return false;
+			// 		}
+			// 		currentTime.setHours($this.data('hour'));
+			// 		currentTime.setMinutes($this.data('minute'));
+			// 		datetimepicker.trigger('select.xdsoft', [currentTime]);
+      //
+			// 		datetimepicker.data('input').val(_xdsoft_datetime.str());
+      //
+			// 		if (options.onSelectTime && $.isFunction(options.onSelectTime)) {
+			// 			options.onSelectTime.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
+			// 		}
+			// 		datetimepicker.data('changed', true);
+			// 		datetimepicker.trigger('xchange.xdsoft');
+			// 		datetimepicker.trigger('changedatetime.xdsoft');
+			// 		if (options.inline !== true && options.closeOnTimeSelect === true) {
+			// 			datetimepicker.trigger('close.xdsoft');
+			// 		}
+			// 	});
 
 			datepicker
 				.on('mousewheel.xdsoft', function (event) {
