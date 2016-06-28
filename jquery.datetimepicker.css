@@ -83,14 +83,14 @@
 }*/
 
 .xdsoft_datetimepicker .xdsoft_timepicker {
-	width: 58px;
-	float: left;
-	text-align: center;
+	/*width: 58px;
+	float: left;*/
+	/*text-align: center;*/
 	margin-left: 8px;
 	margin-top: 0;
 }
 
-.xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker {
+/*.xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker {
 	float: right;
 	margin-right: 8px;
 	margin-left: 0;
@@ -100,7 +100,7 @@
 	margin-top: 27px;
 	margin-bottom: 5px;
   margin-right: 14px;
-}
+}*/
 
 .xdsoft_datetimepicker .xdsoft_monthpicker {
 	position: relative;
@@ -166,7 +166,7 @@
 	margin-left: 14px;
 	margin-top: 7px;
 }
-
+/*
 .xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker .xdsoft_prev,
 .xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker .xdsoft_next {
 	float: none;
@@ -197,11 +197,11 @@
 	border-bottom-width: 0;
 	height: 27px;
 	line-height: 27px;
-}
+}*/
 
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div > div:first-child {
+/*.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div > div:first-child {
 	border-top-width: 0;
-}
+}*/
 
 .xdsoft_datetimepicker .xdsoft_today_button:hover,
 .xdsoft_datetimepicker .xdsoft_next:hover,
