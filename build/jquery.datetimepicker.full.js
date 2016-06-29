@@ -1333,31 +1333,31 @@ var DateFormatter;
 				};
 
 				scroller
-					// .on('touchstart.xdsoft_scroller mousedown.xdsoft_scroller', function (event) {
-					// 	if (!parentHeight) {
-					// 		timeboxparent.trigger('resize_scroll.xdsoft_scroller', [percent]);
-					// 	}
-          //
-					// 	startY = pointerEventToXY(event).y;
-					// 	startTopScroll = parseInt(scroller.css('margin-top'), 10);
-					// 	h1 = scrollbar[0].offsetHeight;
-          //
-					// 	if (event.type === 'mousedown' || event.type === 'touchstart') {
-					// 		if (options.ownerDocument) {
-					// 			$(options.ownerDocument.body).addClass('xdsoft_noselect');
-					// 		}
-					// 		$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft_scroller', function arguments_callee() {
-					// 			$([options.ownerDocument.body, options.contentWindow]).off('touchend mouseup.xdsoft_scroller', arguments_callee)
-					// 				.off('mousemove.xdsoft_scroller', calcOffset)
-					// 				.removeClass('xdsoft_noselect');
-					// 		});
-					// 		$(options.ownerDocument.body).on('mousemove.xdsoft_scroller', calcOffset);
-					// 	} else {
-					// 		touchStart = true;
-					// 		event.stopPropagation();
-					// 		event.preventDefault();
-					// 	}
-					// })
+					.on('touchstart.xdsoft_scroller mousedown.xdsoft_scroller', function (event) {
+						if (!parentHeight) {
+							timeboxparent.trigger('resize_scroll.xdsoft_scroller', [percent]);
+						}
+
+						startY = pointerEventToXY(event).y;
+						startTopScroll = parseInt(scroller.css('margin-top'), 10);
+						h1 = scrollbar[0].offsetHeight;
+
+						if (event.type === 'mousedown' || event.type === 'touchstart') {
+							if (options.ownerDocument) {
+								$(options.ownerDocument.body).addClass('xdsoft_noselect');
+							}
+							$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft_scroller', function arguments_callee() {
+								$([options.ownerDocument.body, options.contentWindow]).off('touchend mouseup.xdsoft_scroller', arguments_callee)
+									.off('mousemove.xdsoft_scroller', calcOffset)
+									.removeClass('xdsoft_noselect');
+							});
+							$(options.ownerDocument.body).on('mousemove.xdsoft_scroller', calcOffset);
+						} else {
+							touchStart = true;
+							event.stopPropagation();
+							event.preventDefault();
+						}
+					})
 					.on('touchmove', function (event) {
 						if (touchStart) {
 							event.preventDefault();
@@ -1400,18 +1400,18 @@ var DateFormatter;
 						}
 					});
 
-				// timeboxparent.on('mousewheel', function (event) {
-				// 	var top = Math.abs(parseInt(timebox.css('marginTop'), 10));
-        //
-				// 	top = top - (event.deltaY * 20);
-				// 	if (top < 0) {
-				// 		top = 0;
-				// 	}
-        //
-				// 	timeboxparent.trigger('scroll_element.xdsoft_scroller', [top / (height - parentHeight)]);
-				// 	event.stopPropagation();
-				// 	return false;
-				// });
+				timeboxparent.on('mousewheel', function (event) {
+					var top = Math.abs(parseInt(timebox.css('marginTop'), 10));
+
+					top = top - (event.deltaY * 20);
+					if (top < 0) {
+						top = 0;
+					}
+
+					timeboxparent.trigger('scroll_element.xdsoft_scroller', [top / (height - parentHeight)]);
+					event.stopPropagation();
+					return false;
+				});
 
 				timeboxparent.on('touchstart', function (event) {
 					start = pointerEventToXY(event);
@@ -1537,42 +1537,42 @@ var DateFormatter;
 
 			month_picker
 				.find('.xdsoft_month,.xdsoft_year')
-				// 	.on('touchstart mousedown.xdsoft', function (event) {
-				// 	var select = $(this).find('.xdsoft_select').eq(0),
-				// 		val = 0,
-				// 		top = 0,
-				// 		visible = select.is(':visible'),
-				// 		items,
-				// 		i;
-        //
-				// 	month_picker
-				// 		.find('.xdsoft_select')
-				// 			.hide();
-				// 	if (_xdsoft_datetime.currentTime) {
-				// 		val = _xdsoft_datetime.currentTime[$(this).hasClass('xdsoft_month') ? 'getMonth' : 'getFullYear']();
-				// 	}
-        //
-				// 	select[visible ? 'hide' : 'show']();
-				// 	for (items = select.find('div.xdsoft_option'), i = 0; i < items.length; i += 1) {
-				// 		if (items.eq(i).data('value') === val) {
-				// 			break;
-				// 		} else {
-				// 			top += items[0].offsetHeight;
-				// 		}
-				// 	}
-        //
-				// 	select.xdsoftScroller(options, top / (select.children()[0].offsetHeight - (select[0].clientHeight)));
-				// 	event.stopPropagation();
-				// 	return false;
-				// });
+					.on('touchstart mousedown.xdsoft', function (event) {
+					var select = $(this).find('.xdsoft_select').eq(0),
+						val = 0,
+						top = 0,
+						visible = select.is(':visible'),
+						items,
+						i;
+
+					month_picker
+						.find('.xdsoft_select')
+							.hide();
+					if (_xdsoft_datetime.currentTime) {
+						val = _xdsoft_datetime.currentTime[$(this).hasClass('xdsoft_month') ? 'getMonth' : 'getFullYear']();
+					}
+
+					select[visible ? 'hide' : 'show']();
+					for (items = select.find('div.xdsoft_option'), i = 0; i < items.length; i += 1) {
+						if (items.eq(i).data('value') === val) {
+							break;
+						} else {
+							top += items[0].offsetHeight;
+						}
+					}
+
+					select.xdsoftScroller(options, top / (select.children()[0].offsetHeight - (select[0].clientHeight)));
+					event.stopPropagation();
+					return false;
+				});
 
 			month_picker
 				.find('.xdsoft_select')
 					.xdsoftScroller(options)
-				// .on('touchstart mousedown.xdsoft', function (event) {
-				// 	event.stopPropagation();
-				// 	event.preventDefault();
-				// })
+				.on('touchstart mousedown.xdsoft', function (event) {
+					event.stopPropagation();
+					event.preventDefault();
+				})
 				.on('touchstart mousedown.xdsoft', '.xdsoft_option', function () {
 					if (_xdsoft_datetime.currentTime === undefined || _xdsoft_datetime.currentTime === null) {
 						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
@@ -1795,15 +1795,15 @@ var DateFormatter;
 					.trigger('afterOpen.xdsoft');
 			};
 
-			// datetimepicker
-			// 	.data('options', options)
-			// 	.on('touchstart mousedown.xdsoft', function (event) {
-			// 		event.stopPropagation();
-			// 		event.preventDefault();
-			// 		yearselect.hide();
-			// 		monthselect.hide();
-			// 		return false;
-			// 	});
+			datetimepicker
+				.data('options', options)
+				.on('touchstart mousedown.xdsoft', function (event) {
+					event.stopPropagation();
+					event.preventDefault();
+					yearselect.hide();
+					monthselect.hide();
+					return false;
+				});
 
 			//scroll_element = timepicker.find('.xdsoft_time_box');
 			timeboxparent.append(timebox);
@@ -2075,48 +2075,48 @@ var DateFormatter;
 					});
 				});
 
-			// timepicker
-			// 	.find('.xdsoft_prev,.xdsoft_next')
-			// 	.on('touchend mousedown.xdsoft', function () {
-			// 		var $this = $(this),
-			// 			timer = 0,
-			// 			stop = false,
-			// 			period = 110;
-			// 		(function arguments_callee4(v) {
-			// 			var pheight = timeboxparent[0].clientHeight,
-			// 				height = timebox[0].offsetHeight,
-			// 				top = Math.abs(parseInt(timebox.css('marginTop'), 10));
-			// 			if ($this.hasClass(options.next) && (height - pheight) - options.timeHeightInTimePicker >= top) {
-			// 				timebox.css('marginTop', '-' + (top + options.timeHeightInTimePicker) + 'px');
-			// 			} else if ($this.hasClass(options.prev) && top - options.timeHeightInTimePicker >= 0) {
-			// 				timebox.css('marginTop', '-' + (top - options.timeHeightInTimePicker) + 'px');
-			// 			}
-      //                   /**
-      //                    * Fixed bug:
-      //                    * When using css3 transition, it will cause a bug that you cannot scroll the timepicker list.
-      //                    * The reason is that the transition-duration time, if you set it to 0, all things fine, otherwise, this
-      //                    * would cause a bug when you use jquery.css method.
-      //                    * Let's say: * { transition: all .5s ease; }
-      //                    * jquery timebox.css('marginTop') will return the original value which is before you clicking the next/prev button,
-      //                    * meanwhile the timebox[0].style.marginTop will return the right value which is after you clicking the
-      //                    * next/prev button.
-      //                    *
-      //                    * What we should do:
-      //                    * Replace timebox.css('marginTop') with timebox[0].style.marginTop.
-      //                    */
-      //                   timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
-			// 			period = (period > 10) ? 10 : period - 10;
-			// 			if (!stop) {
-			// 				timer = setTimeout(arguments_callee4, v || period);
-			// 			}
-			// 		}(500));
-			// 		$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft', function arguments_callee5() {
-			// 			clearTimeout(timer);
-			// 			stop = true;
-			// 			$([options.ownerDocument.body, options.contentWindow])
-			// 				.off('touchend mouseup.xdsoft', arguments_callee5);
-			// 		});
-			// 	});
+			timepicker
+				.find('.xdsoft_prev,.xdsoft_next')
+				.on('touchend mousedown.xdsoft', function () {
+					var $this = $(this),
+						timer = 0,
+						stop = false,
+						period = 110;
+					(function arguments_callee4(v) {
+						var pheight = timeboxparent[0].clientHeight,
+							height = timebox[0].offsetHeight,
+							top = Math.abs(parseInt(timebox.css('marginTop'), 10));
+						if ($this.hasClass(options.next) && (height - pheight) - options.timeHeightInTimePicker >= top) {
+							timebox.css('marginTop', '-' + (top + options.timeHeightInTimePicker) + 'px');
+						} else if ($this.hasClass(options.prev) && top - options.timeHeightInTimePicker >= 0) {
+							timebox.css('marginTop', '-' + (top - options.timeHeightInTimePicker) + 'px');
+						}
+                        /**
+                         * Fixed bug:
+                         * When using css3 transition, it will cause a bug that you cannot scroll the timepicker list.
+                         * The reason is that the transition-duration time, if you set it to 0, all things fine, otherwise, this
+                         * would cause a bug when you use jquery.css method.
+                         * Let's say: * { transition: all .5s ease; }
+                         * jquery timebox.css('marginTop') will return the original value which is before you clicking the next/prev button,
+                         * meanwhile the timebox[0].style.marginTop will return the right value which is after you clicking the
+                         * next/prev button.
+                         *
+                         * What we should do:
+                         * Replace timebox.css('marginTop') with timebox[0].style.marginTop.
+                         */
+                        timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
+						period = (period > 10) ? 10 : period - 10;
+						if (!stop) {
+							timer = setTimeout(arguments_callee4, v || period);
+						}
+					}(500));
+					$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft', function arguments_callee5() {
+						clearTimeout(timer);
+						stop = true;
+						$([options.ownerDocument.body, options.contentWindow])
+							.off('touchend mouseup.xdsoft', arguments_callee5);
+					});
+				});
 
 			xchangeTimer = 0;
 			// base handler - generating a calendar and timepicker
@@ -2417,36 +2417,36 @@ var DateFormatter;
 					}, 200);
 				});
 
-			// timebox
-			// 	.on('touchend click.xdsoft', 'div', function (xdevent) {
-			// 		xdevent.stopPropagation();
-			// 		var $this = $(this),
-			// 			currentTime = _xdsoft_datetime.currentTime;
-      //
-			// 		if (currentTime === undefined || currentTime === null) {
-			// 			_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
-			// 			currentTime = _xdsoft_datetime.currentTime;
-			// 		}
-      //
-			// 		if ($this.hasClass('xdsoft_disabled')) {
-			// 			return false;
-			// 		}
-			// 		currentTime.setHours($this.data('hour'));
-			// 		currentTime.setMinutes($this.data('minute'));
-			// 		datetimepicker.trigger('select.xdsoft', [currentTime]);
-      //
-			// 		datetimepicker.data('input').val(_xdsoft_datetime.str());
-      //
-			// 		if (options.onSelectTime && $.isFunction(options.onSelectTime)) {
-			// 			options.onSelectTime.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
-			// 		}
-			// 		datetimepicker.data('changed', true);
-			// 		datetimepicker.trigger('xchange.xdsoft');
-			// 		datetimepicker.trigger('changedatetime.xdsoft');
-			// 		if (options.inline !== true && options.closeOnTimeSelect === true) {
-			// 			datetimepicker.trigger('close.xdsoft');
-			// 		}
-			// 	});
+			timebox
+				.on('touchend click.xdsoft', 'div', function (xdevent) {
+					xdevent.stopPropagation();
+					var $this = $(this),
+						currentTime = _xdsoft_datetime.currentTime;
+
+					if (currentTime === undefined || currentTime === null) {
+						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
+						currentTime = _xdsoft_datetime.currentTime;
+					}
+
+					if ($this.hasClass('xdsoft_disabled')) {
+						return false;
+					}
+					currentTime.setHours($this.data('hour'));
+					currentTime.setMinutes($this.data('minute'));
+					datetimepicker.trigger('select.xdsoft', [currentTime]);
+
+					datetimepicker.data('input').val(_xdsoft_datetime.str());
+
+					if (options.onSelectTime && $.isFunction(options.onSelectTime)) {
+						options.onSelectTime.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
+					}
+					datetimepicker.data('changed', true);
+					datetimepicker.trigger('xchange.xdsoft');
+					datetimepicker.trigger('changedatetime.xdsoft');
+					if (options.inline !== true && options.closeOnTimeSelect === true) {
+						datetimepicker.trigger('close.xdsoft');
+					}
+				});
 
 			datepicker
 				.on('mousewheel.xdsoft', function (event) {
