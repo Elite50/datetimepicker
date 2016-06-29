@@ -756,31 +756,31 @@
 				};
 
 				scroller
-					.on('touchstart.xdsoft_scroller mousedown.xdsoft_scroller', function (event) {
-						if (!parentHeight) {
-							timeboxparent.trigger('resize_scroll.xdsoft_scroller', [percent]);
-						}
-
-						startY = pointerEventToXY(event).y;
-						startTopScroll = parseInt(scroller.css('margin-top'), 10);
-						h1 = scrollbar[0].offsetHeight;
-
-						if (event.type === 'mousedown' || event.type === 'touchstart') {
-							if (options.ownerDocument) {
-								$(options.ownerDocument.body).addClass('xdsoft_noselect');
-							}
-							$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft_scroller', function arguments_callee() {
-								$([options.ownerDocument.body, options.contentWindow]).off('touchend mouseup.xdsoft_scroller', arguments_callee)
-									.off('mousemove.xdsoft_scroller', calcOffset)
-									.removeClass('xdsoft_noselect');
-							});
-							$(options.ownerDocument.body).on('mousemove.xdsoft_scroller', calcOffset);
-						} else {
-							touchStart = true;
-							event.stopPropagation();
-							event.preventDefault();
-						}
-					})
+					// .on('touchstart.xdsoft_scroller mousedown.xdsoft_scroller', function (event) {
+					// 	if (!parentHeight) {
+					// 		timeboxparent.trigger('resize_scroll.xdsoft_scroller', [percent]);
+					// 	}
+          //
+					// 	startY = pointerEventToXY(event).y;
+					// 	startTopScroll = parseInt(scroller.css('margin-top'), 10);
+					// 	h1 = scrollbar[0].offsetHeight;
+          //
+					// 	if (event.type === 'mousedown' || event.type === 'touchstart') {
+					// 		if (options.ownerDocument) {
+					// 			$(options.ownerDocument.body).addClass('xdsoft_noselect');
+					// 		}
+					// 		$([options.ownerDocument.body, options.contentWindow]).on('touchend mouseup.xdsoft_scroller', function arguments_callee() {
+					// 			$([options.ownerDocument.body, options.contentWindow]).off('touchend mouseup.xdsoft_scroller', arguments_callee)
+					// 				.off('mousemove.xdsoft_scroller', calcOffset)
+					// 				.removeClass('xdsoft_noselect');
+					// 		});
+					// 		$(options.ownerDocument.body).on('mousemove.xdsoft_scroller', calcOffset);
+					// 	} else {
+					// 		touchStart = true;
+					// 		event.stopPropagation();
+					// 		event.preventDefault();
+					// 	}
+					// })
 					.on('touchmove', function (event) {
 						if (touchStart) {
 							event.preventDefault();
@@ -823,18 +823,18 @@
 						}
 					});
 
-				timeboxparent.on('mousewheel', function (event) {
-					var top = Math.abs(parseInt(timebox.css('marginTop'), 10));
-
-					top = top - (event.deltaY * 20);
-					if (top < 0) {
-						top = 0;
-					}
-
-					timeboxparent.trigger('scroll_element.xdsoft_scroller', [top / (height - parentHeight)]);
-					event.stopPropagation();
-					return false;
-				});
+				// timeboxparent.on('mousewheel', function (event) {
+				// 	var top = Math.abs(parseInt(timebox.css('marginTop'), 10));
+        //
+				// 	top = top - (event.deltaY * 20);
+				// 	if (top < 0) {
+				// 		top = 0;
+				// 	}
+        //
+				// 	timeboxparent.trigger('scroll_element.xdsoft_scroller', [top / (height - parentHeight)]);
+				// 	event.stopPropagation();
+				// 	return false;
+				// });
 
 				timeboxparent.on('touchstart', function (event) {
 					start = pointerEventToXY(event);
@@ -960,42 +960,42 @@
 
 			month_picker
 				.find('.xdsoft_month,.xdsoft_year')
-					.on('touchstart mousedown.xdsoft', function (event) {
-					var select = $(this).find('.xdsoft_select').eq(0),
-						val = 0,
-						top = 0,
-						visible = select.is(':visible'),
-						items,
-						i;
-
-					month_picker
-						.find('.xdsoft_select')
-							.hide();
-					if (_xdsoft_datetime.currentTime) {
-						val = _xdsoft_datetime.currentTime[$(this).hasClass('xdsoft_month') ? 'getMonth' : 'getFullYear']();
-					}
-
-					select[visible ? 'hide' : 'show']();
-					for (items = select.find('div.xdsoft_option'), i = 0; i < items.length; i += 1) {
-						if (items.eq(i).data('value') === val) {
-							break;
-						} else {
-							top += items[0].offsetHeight;
-						}
-					}
-
-					select.xdsoftScroller(options, top / (select.children()[0].offsetHeight - (select[0].clientHeight)));
-					event.stopPropagation();
-					return false;
-				});
+				// 	.on('touchstart mousedown.xdsoft', function (event) {
+				// 	var select = $(this).find('.xdsoft_select').eq(0),
+				// 		val = 0,
+				// 		top = 0,
+				// 		visible = select.is(':visible'),
+				// 		items,
+				// 		i;
+        //
+				// 	month_picker
+				// 		.find('.xdsoft_select')
+				// 			.hide();
+				// 	if (_xdsoft_datetime.currentTime) {
+				// 		val = _xdsoft_datetime.currentTime[$(this).hasClass('xdsoft_month') ? 'getMonth' : 'getFullYear']();
+				// 	}
+        //
+				// 	select[visible ? 'hide' : 'show']();
+				// 	for (items = select.find('div.xdsoft_option'), i = 0; i < items.length; i += 1) {
+				// 		if (items.eq(i).data('value') === val) {
+				// 			break;
+				// 		} else {
+				// 			top += items[0].offsetHeight;
+				// 		}
+				// 	}
+        //
+				// 	select.xdsoftScroller(options, top / (select.children()[0].offsetHeight - (select[0].clientHeight)));
+				// 	event.stopPropagation();
+				// 	return false;
+				// });
 
 			month_picker
 				.find('.xdsoft_select')
 					.xdsoftScroller(options)
-				.on('touchstart mousedown.xdsoft', function (event) {
-					event.stopPropagation();
-					event.preventDefault();
-				})
+				// .on('touchstart mousedown.xdsoft', function (event) {
+				// 	event.stopPropagation();
+				// 	event.preventDefault();
+				// })
 				.on('touchstart mousedown.xdsoft', '.xdsoft_option', function () {
 					if (_xdsoft_datetime.currentTime === undefined || _xdsoft_datetime.currentTime === null) {
 						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
@@ -1218,15 +1218,15 @@
 					.trigger('afterOpen.xdsoft');
 			};
 
-			datetimepicker
-				.data('options', options)
-				.on('touchstart mousedown.xdsoft', function (event) {
-					event.stopPropagation();
-					event.preventDefault();
-					yearselect.hide();
-					monthselect.hide();
-					return false;
-				});
+			// datetimepicker
+			// 	.data('options', options)
+			// 	.on('touchstart mousedown.xdsoft', function (event) {
+			// 		event.stopPropagation();
+			// 		event.preventDefault();
+			// 		yearselect.hide();
+			// 		monthselect.hide();
+			// 		return false;
+			// 	});
 
 			//scroll_element = timepicker.find('.xdsoft_time_box');
 			timeboxparent.append(timebox);
