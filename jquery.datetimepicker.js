@@ -1168,7 +1168,7 @@
 
 				month_picker
 					.find('.xdsoft_today_button')
-						.css('visibility', !options.todayButton ? 'hidden' : 'visible');
+						.css('display', !options.todayButton ? 'none' : 'block');
 
 				month_picker
 					.find('.' + options.prev)
