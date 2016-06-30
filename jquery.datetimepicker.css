@@ -79,7 +79,6 @@
 	float: left;
 	margin-left: 12px;
   margin-right: 12px;
-  border-bottom: 2px solid #efefef;
 }
 
 .xdsoft_datetimepicker.xdsoft_rtl .xdsoft_datepicker {
@@ -93,9 +92,12 @@
 }*/
 
 .xdsoft_datetimepicker .xdsoft_timepicker {
-  margin-top: 14px;
+  width: 240px;
+  border-top: 2px solid #efefef;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-top: 14px;
   margin-bottom: 18px;
-  width: 100%;
   text-align: center;
 }
 
