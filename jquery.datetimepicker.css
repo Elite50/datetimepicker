@@ -93,11 +93,11 @@
 
 .xdsoft_datetimepicker .xdsoft_timepicker {
   width: 240px;
-  border-top: 2px solid #efefef;
+  border-top: 1px solid #efefef;
   margin-left: 12px;
   margin-right: 12px;
-  padding-top: 14px;
-  margin-bottom: 18px;
+  padding-top: 16px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -116,7 +116,7 @@
 .xdsoft_datetimepicker .xdsoft_monthpicker {
 	position: relative;
 	text-align: center;
-  margin-top: 10px;
+  margin-top: 14px;
 }
 
 .xdsoft_datetimepicker .xdsoft_label i,
@@ -288,7 +288,7 @@
 
 .xdsoft_datetimepicker .xdsoft_calendar {
 	clear: both;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .xdsoft_datetimepicker .xdsoft_year{
