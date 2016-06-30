@@ -235,9 +235,9 @@
 	cursor: pointer;
 }
 
-/*.xdsoft_datetimepicker .xdsoft_label:hover>span {
-	text-decoration: underline;
-}*/
+.xdsoft_datetimepicker .xdsoft_label:hover>span {
+	color: #00aeef;
+}
 
 .xdsoft_datetimepicker .xdsoft_label:hover i {
 	opacity: 1.0;
