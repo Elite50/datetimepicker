@@ -2,7 +2,6 @@
 .xdsoft_datetimepicker {
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
   background: #fff;
-  border-top: 6px solid #00aeef;
   width: 264px;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -14,7 +13,7 @@
   display: none;
 }
 
-.xdsoft_datetimepicker::before {
+.cal-arrow-up::before {
   content: '';
   display: block;
   position: absolute;
@@ -23,7 +22,20 @@
   border-left: 8px solid transparent;
   width: 0;
   height: 0;
-  top: -11px;
+  top: -13px;
+  right: 124px;
+}
+
+.cal-arrow-down::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-top: 8px solid #00aeef;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  width: 0;
+  height: 0;
+  bottom: -13px;
   right: 124px;
 }
 
@@ -401,6 +413,9 @@
   font-weight: 400;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
+/*.set-a-time:hover {
+  text-decoration: underline;
+}*/
 
 .time-optional {
   text-transform: uppercase;
@@ -410,4 +425,11 @@
   font-size: 12px;
   font-weight: 400;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+/*.time-optional:hover {
+  text-decoration: underline;
+}*/
+
+.set-time-clicker:hover {
+  /* something */
 }
